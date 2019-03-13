@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>网豫游戏 | 登录</title>
+    <title>一个论坛 | 登录</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -14,42 +14,74 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/login/login.js"></script>
+
 </head>
 
-<body class="gray-bg">
+<body class="gray-bg" onload="loginInit()">
 
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
             <div>
 
-                <h1 class="logo-name">GAME</h1>
+                <h1 class="logo-name">FORUM</h1>
 
             </div>
-            <h3>欢迎登录网豫游戏</h3>
-            <p>
-            </p>
-            <p>快乐游戏，欢乐至上</p>
             <form class="m-t" role="form" action="index.html">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="用户名" required="">
+                    <input type="loginName" class="form-control" placeholder="用户名" required="">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="密码" required="">
                 </div>
+                <div class="form-group">
+                    <img class="form-inline" src="data:image;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAiAFADASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1pZjJ
+OU3FdycDAyjA85/76X1H9cuxvLoCO0Hl78ELuJyuOfm68cEY6/SiaaQXqyRyZeKPMmPusMgbuM5y
+NpPsOvHEDSJb3U0u4CVz5kbryUy3Ix0JwT7eh5rZI6HI0Zru+Wbb5MMa+rksCOfmyO3T6ZFVp7uS
+JpJEYKGJw8b71Jx0Jxj+vGOARjM1bxTBoq2zTS+bKysgiQh5FXPJJyB2GDjnnrir0d5bXWli7MAj
+ie281nm2gRLtzuGSSAM9OwII93axCqxlJxT1RYk1CWS3jljYLKq52ryr92BzyCME/TvyKGvVupPK
+ngh7ZDHmMZAPPrjJ7YxXGWXi/TLq9dLWC+e3MxhS6eA+STkbMkc8nGAQOSueM1vz6nbvrsOnPI5v
+EsftBkjw67Q23Gck7gcn04ByM8Pl7AqilszoYlht2jjtliAcZ5OCw9Qe+OePftUTSqLqZJWKojDb
+JnBXIHfuMkcdBkdumHYapDfatfWNtBKJ7ZYjcIcOkm/JyMk56r1xjnnvWR4T8RjxHp9xfxWhstkv
+leXHOzMcKGJBx0PP045o5H1K50dVdXcro9tcQL5qoxxj5W44Zc9CBk/hjqeGokkUizWk58tipSOR
+iVIPy9j1BwMduOaqtbvDJEscfmMykrlRk4BPup6+pPHbpUELG1fc/OQVaLOCR0IPp3/LpRbsK+up
+fvM2t6ciYx4xuXHypnOBlexIwc8cCq+63t5zsc7QMLyNynrncvUc4ODnn2FaV0Ee42u4Xdn5goK4
+GeTng4OAR7A8Y4ot9otJXjZzhQHVOSMjB+pGE69uM45pIb3OB1K8kvNP1S8utN1GG5nZUjYqzQxQ
+hlO0lj1LYJPOSRgDNXNWnnPwwkEMVykwhjXKsykJwDkdNpXefcE9q6S6t7a8jeG8gjkhZslUyqnB
+3FQwI6HA79e/FXJba3SK1igaNY1RYhlgMxj7pye+FwT1yOnrVzip4aUZuTd7q3nuZfhPVrG68I6d
+b2wtk8iNE++IwJsKCP8AfZ2PpncCDk5rn/EN6tx48t4VlniNzYRWweMEyIpuMuVIzyE3ncR29ea1
+9O8IaEmri4j00eejblVZMjd3KgttGOoAHb2zWkmgWUniOO9lt1a6jRkgdi6gDnjHQEBj94H9QaqE
+owbbN+WcopM5jwBcve6vq1xiaG5SKzhJlHPmqnltuB7khj69a4PT9Gtrn4aarqsryST2lyFijMpC
+xZaEFgvQlg2D/ur+PsWn6Nb6fcXs9jAFe5l3TtHLuBkydjKScjlz0/8ArBtn4T8PpoM+lw6XILSZ
+g88fnOyucg9QxbGUGCP7vfnNTqLmbXkCpO1n5ieGrp7jw3pMlxczyyi0jLNglkBUEsT1I6Z5B61f
+ksHuN00MqyIHwWCnuA2e5PJx6/0nksLZLfT4rDbHBHEIIW3k7Ao+QZJzngjnJ/GowktlvkaLYgID
+KmQVyOuQ2cZ98HB6Gsr9jW1tGVElklhufMdn+QN8xzzuUZ+uOK2ZXb7JpzbjuMkeTnk5HNFFSyoi
+XPy6HHKvEiRptcdVzjODWVEo86yXAxIAHH9794evr0H5UUU47CkJpiLJqMSuoZTnIYZHQ1sJbwrY
+W0gijD5iO4KM9V70UVUhRKD/APILgl/5aLG2H7jEi459qm0f5xhvmDBwwPOQNgAP0yfzooqXsNbl
+O4Yrp9k6khyWJYdTg4H5DpWxqSgm1JAyZ1X8DnI+hoooe6Gtmf/Z" id="img_validateCode" />
+                    <input type="validateCode" style="width:220px" class="form-control form-inline" placeholder="验证码" required="">
+                </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">登录</button>
 
                 <a href="#"><small>忘记密码?</small></a>
-                <p class="text-muted text-center"><small>还没有账号?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="register.html">创建一个帐户</a>
+                <p class="text-muted text-center"><small>还没有账号? <a href="register.html">创建一个帐户</a></small></p>
+
             </form>
-            <p class="m-t"> <small>Copyright</strong> 网豫游戏 &copy; 2017-2018</small> </p>
+            <p class="m-t"> <small>Copyright</strong> 一个论坛 &copy; 2019-2020</small> </p>
         </div>
     </div>
-
-    <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
 </body>
-
 </html>

@@ -1,0 +1,5 @@
+function loginInit(){
+    $.ajax({
+
+    });
+}
